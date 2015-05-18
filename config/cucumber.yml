@@ -1,0 +1,10 @@
+<% standard_opts = "--format junit --out junit_format --format html --out report.html --format rerun --out rerun.txt --no-source --format pretty --require features --tags ~@wip" %>
+<%
+rerun = File.file?('rerun.txt') ? IO.read('rerun.txt') : ""
+rerun_opts = rerun.to_s.strip.empty? ? "--format #{ENV['CUCUMBER_FORMAT'] || 'progress'} features" : "--format #{ENV['CUCUMBER_FORMAT'] || 'pretty'} #{rerun}"
+%>
+
+rerun: <%= rerun_opts %> --format junit --out junit_format_rerun --format html --out rerun.html --format rerun --out rerun.txt --no-source --require features
+
+
+login: <%= standard_opts %> --tags @login
