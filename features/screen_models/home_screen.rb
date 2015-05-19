@@ -2,16 +2,31 @@ class HomeScreen < PageActions
 
   # element :sign_in, css: "span.text"
 
+
+
   def get_home
-    driver.get "http://www.distilnetworks.com/"
+     driver.get "http://www.prosper.com/"
   end
 
-  def expand_menu
-    find_element(:css,"a.hamburger")
+
+  def loan_amount
+     find_element(:id, "loan-amount")
   end
 
-  def sign_in
-    find_element(:id, "menu-item-39").find_element(:tag_name, "a")
+
+  def loan_purpose
+     find_element(:id, "listing-category-id")
   end
+
+
+  def credit_score
+    find_element(:id, "credit_quality_id")
+  end
+
+
+  def check_your_rate
+    find_element(:class, "button")
+  end
+
 
 end
