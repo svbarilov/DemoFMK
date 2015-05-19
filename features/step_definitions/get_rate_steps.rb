@@ -21,7 +21,7 @@ end
 
 
 Then(/^I click on "([^"]*)"(?: button|image|area)? on "([^"]*)"$/) do |element, screen|
-    send(screen.downcase.tr(' ', '_')).send(element.downcase.tr(' ', '_')).click
+  send(screen.downcase.tr(' ', '_')).send(element.downcase.tr(' ', '_')).click
 end
 
 
